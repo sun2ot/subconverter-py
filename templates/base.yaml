@@ -1,0 +1,24 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: :9090
+tun:
+  route-exclude-address:
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 10.0.0.0/8
+dns:
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - +.lan
+    - dns.msftncsi.com
+    - www.msftncsi.com
+    - www.msftconnecttest.com
+    - +.cnki.net
+    - +.qq.com
+proxies: []
+proxy-groups: []
+rules: []
+rule-providers:
